@@ -1,0 +1,25 @@
+Install tailwindcss
+   npm install tailwindcss --save
+ Create new css file e.g main.css and add the following lines of codes
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities
+Generate boilerplate configuration file using the following Tailwind CLI
+   npx tailwindcss init
+This will generate a file called "tailwind.config.js" having the following content.
+   module.exports = {
+      future: {},
+      purge: [],
+      theme: {
+          extend: {},
+      },
+      variants: {},
+      plugins: [],
+   }
+ Add the following two plugins:
+   plugins:[
+       require("tailwindcss"),
+       require("autoprefixer")
+   ]
+ Compile the main.css file and create a new file called output.css which will be the actual css using the following command
+    npx tailwindcss build main.css -o output.css
